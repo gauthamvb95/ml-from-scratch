@@ -21,3 +21,7 @@ class LinearRegression:
             db = (1 / num_samples) * np.sum(y_pred - y)
             self.weights -= dw * self.alpha
             self.bias -= db * self.alpha
+
+    def predict(self, X):
+        y_approximated = np.dot(X, self.weights) + self.bias
+        return y_approximated
